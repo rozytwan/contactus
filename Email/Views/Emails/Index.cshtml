@@ -1,0 +1,84 @@
+﻿@model Email.Models.Email
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2>Index</h2>
+@using (Html.BeginForm("SendMail", "Emails", FormMethod.Get))
+{
+ @Html.LabelFor(m => m.To)<br />
+    @Html.TextBoxFor(m => m.To)<br />
+
+        @Html.LabelFor(m => m.Subject)<br />
+        @Html.TextBoxFor(m => m.Subject)<br />
+
+
+        @Html.LabelFor(m => m.Body)<br />
+        @Html.TextAreaFor(m => m.Body)<br /> 
+    <button typ1e="submit" class="btn-success" name="send">Send</button>
+
+
+
+}
+
+
+        @*<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <div>
+            <div class="col-md-6">
+                <div>
+                    @if (ViewBag.Message == null)
+                    {
+                        <div>
+                            <form method="post">
+                                <div class="form-group">
+                                    <label asp-for="Name">Name</label>
+
+                                    @Html.TextBoxFor(m => m.To, new { @class = "form-control" })
+
+
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Email">To</label>
+                                    @Html.TextBoxFor(m => m.To, new { @class = "form-control" })
+
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Subject">Subject</label>
+                                    @Html.TextBoxFor(m => m.Subject, new { @class = "form-control" })
+
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Message">Message</label>
+                                    @Html.TextAreaFor(m => m.Body, new { @class = "form-control" })>
+
+                                </div>
+                                <div>
+                                    <button type="submit"
+                                            class="btn btn-success">
+                                        Send
+                                    </button>
+                                </div>
+
+                            </form>
+                        </div>
+                    }
+                </div>
+
+                <div>
+                    <div>
+                        @if (ViewBag.Message != null)
+                        {
+                            <div>@ViewBag.Message</div>
+
+
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div>*@
